@@ -1,5 +1,3 @@
-# load.py
-import requests
 import os
 import pandas as pd
 
@@ -13,7 +11,7 @@ def best():
     df['openDt'] = pd.to_datetime(df['openDt'],errors='coerce')
     df['openDt'] = df['openDt'].dt.strftime('%Y%m%d')
     df['load_dt'] = df['load_dt'].astype(str)
-    
+
     grouped = df.groupby('movieNm').agg({
         'audiCnt': 'sum',
         'openDt': 'max',
@@ -33,4 +31,3 @@ def special_dat():
         'openDt': 'max',
         'load_dt' :'max'
     }).sort_values(['load_dt','audiCnt'], ascending = False)
-    
