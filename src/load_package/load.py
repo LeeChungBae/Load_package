@@ -13,6 +13,7 @@ def col_type(load_dt,path):
     col=['rankInten','salesInten','salesChange']
     for i in col:
         df[i]=pd.to_numeric(df[i])
+
     df['openDt'] = pd.to_datetime(df['openDt'])
     df['openDt'] = df['openDt'].dt.strftime('%Y%m%d')
     df['load_dt'] = df['load_dt'].astype(str)
