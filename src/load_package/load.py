@@ -21,8 +21,9 @@ def col_type(load_dt,path):
     print(df.info())
     print(df['load_dt'].head(3)) 
     # 달 박스오피스 1위 출력 
-    df.groupby('audiCnt')
-    dg=df.groupby('audiCnt').sum().sort_values('audiCnt',ascending=False)
-    df_unique_first = dg.drop_duplicates(subset='movieNm', keep='first')
-    df_unique_first
- 
+    grouped = df.groupby('movieNm').agg({
+    'audiCnt': 'sum',
+    'openDt': 'max',
+    'load_dt' :'max'
+    }).reset_index()
+    grouped.sort_values('audiCnt',ascending=False) 
