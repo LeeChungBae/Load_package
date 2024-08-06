@@ -13,7 +13,7 @@ PLAYDATA 데이터엔지니어링 부트캠프 32기 팀 LeeChungBae의 extract_
 
 ## 모듈별 기능
 - `Load_package.py`:
-본 branch에서는 아직 개발되지 않은 기능입니다.
+본 branch에서는  개발 중인 기능입니다.
 
-Transform_Package를 통해 데이터 프레임 형태로 저장한 데이터를 최종적으로 Load_Package를 이용해 parquet 파일형태로 저장하는 모듈입니다.
+Transform_Package를 통해 데이터 변형한 데이터를 최종적으로 Load_Package를 이용해 집계 함수로 통계를 낸 parquet 파일형태로 저장하는 모듈입니다.
 
